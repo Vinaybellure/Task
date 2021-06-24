@@ -54,12 +54,12 @@ function Test1()
         {
             data.map((post) => {
                 return (    
-                    <div>
-                        <div className="set mb-3">
+                    <div key={post.RestaurantID}>
+                        <div className="set mb-3" >
                             <button className="mr-2" onClick={() =>showItem(post.RestaurantID)}>{
                                 arrow.includes(post.RestaurantID) ? <i className="fas fa-caret-down"></i> : <i className="fas fa-caret-right"></i> 
                             }</button>
-                            <p className="mb-0">{post.RestaurantName}</p> 
+                            <p  className="mb-0">{post.RestaurantName}</p> 
                         </div>
                         
                         {
