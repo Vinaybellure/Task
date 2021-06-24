@@ -63,8 +63,8 @@ function Test1()
                         </div>
                         
                         {
-                            show.includes(post.RestaurantID) && post.menu.map((menu) =>{
-                                if(menu.type == "sectionheader")
+                         show.includes(post.RestaurantID) && post.menu.map((menu) =>{
+                                if(menu.type === "sectionheader")
                                 {
                                     return (
                                         <div>
@@ -75,7 +75,7 @@ function Test1()
                                             {
                                                 show.includes(menu.id) &&  menu.children.map((child) => 
                                                 {
-                                                    if(child.type=="item" && child.selected == 1)
+                                                    if(child.type==="item" && child.selected === 1)
                                                     {
                                                         return (
                                                             <div>
@@ -86,7 +86,7 @@ function Test1()
 
                                                                 {
                                                                     show.includes(child.id) &&  child.children.map((child1) =>{
-                                                                        if(child1.selected == 1)
+                                                                        if(child1.selected === 1)
                                                                         { 
                                                                             return (
                                                                             <div>
@@ -96,13 +96,19 @@ function Test1()
                                                                                 </div>
                                                                                 {
                                                                                     show.includes(child1.id) &&  child1.children.map((child2) => {
-                                                                                        if(child2.selected ==1) {
+                                                                                        if(child2.selected ===1) {
                                                                                             return <p className="ml-5 pl-5">{child2.name}</p>
+                                                                                        }
+                                                                                        else{
+                                                                                            return null
                                                                                         }
                                                                                     })
                                                                                 }
                                                                             </div>
                                                                             )
+                                                                        }
+                                                                        else{
+                                                                            return null
                                                                         }
                                                                     })
                                                                 }
@@ -110,12 +116,20 @@ function Test1()
                                                             </div>
                                                         )
                                                     }
+                                                    else{
+                                                        return null
+                                                    }
                                                 })
                                             }
                                         </div>
                                         
                                     )
-                                }})
+                                }
+                                else{
+                                    return null
+                                }
+                                
+                            })
                         }
                     </div>
                 )
