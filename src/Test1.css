@@ -1,0 +1,20 @@
+
+.set
+{
+    display: flex;
+    align-items: center;
+}
+button
+{
+    border: none;
+    background-color: transparent;
+    outline: none;
+}
+
+button:focus {
+    border: none;
+}
+
+button:active {
+    border: none;
+}
